@@ -81,8 +81,7 @@
 						<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 							<img class="nav-user-photo" src="<?php echo base_url() ?>aceadmin/assets/images/avatars/user.jpg" alt="Jason's Photo" />
 							<span class="user-info">
-								<small>Welcome,</small>
-								Jason
+								<?php echo $this->session->userdata('level') ?>
 							</span>
 
 							<i class="ace-icon fa fa-caret-down"></i>
@@ -100,7 +99,7 @@
 							<li class="divider"></li>
 
 							<li>
-								<a href="#">
+								<a href="<?= base_url('login/logout'); ?>">
 									<i class="ace-icon fa fa-power-off"></i>
 									Logout
 								</a>
@@ -128,21 +127,29 @@
 
 			<div class="sidebar-shortcuts" id="sidebar-shortcuts">
 				<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-					<button class="btn btn-success">
-						<i class="ace-icon fa fa-signal"></i>
-					</button>
+					<a class="satu" href="<?php echo base_url('laporan_polisi/lihat') ?>">
+						<button class="btn btn-success">
+							<i class="ace-icon fa fa-briefcase white"></i>
+						</button>
+					</a>
 
-					<button class="btn btn-info">
-						<i class="ace-icon fa fa-pencil"></i>
-					</button>
+					<a href="<?php echo base_url('piket/lihat') ?>">
+						<button class="btn btn-info">
+							<i class="ace-icon fa fa-coffee white"></i>
+						</button>
+					</a>
 
-					<button class="btn btn-warning">
-						<i class="ace-icon fa fa-users"></i>
-					</button>
+					<a href="<?php echo base_url('ruang/lihat') ?>">
+						<button class="btn btn-warning">
+							<i class="ace-icon fa fa-laptop"></i>
+						</button>
+					</a>
 
-					<button class="btn btn-danger">
-						<i class="ace-icon fa fa-cogs"></i>
-					</button>
+					<a href="<?php echo base_url('laporan_polisi/lihat') ?>">
+						<button class="btn btn-danger">
+							<i class="ace-icon fa fa-pencil-square-o"></i>
+						</button>
+					</a>
 				</div>
 
 				<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
@@ -158,7 +165,7 @@
 
 			<ul class="nav nav-list">
 				<li class="">
-					<a href="<?php echo base_url() ?>">
+					<a href="<?php echo base_url('dashboard') ?>">
 						<i class="menu-icon fa fa-tachometer"></i>
 						<span class="menu-text"> Dashboard </span>
 					</a>
@@ -271,25 +278,6 @@
 					</a>
 
 					<b class="arrow"></b>
-					<ul class="submenu">
-						<li class="">
-							<a href="<?php echo base_url('dashboard/laporan') ?>">
-								<i class="menu-icon fa fa-caret-right"></i>
-								Tambah Data
-							</a>
-
-							<b class="arrow"></b>
-						</li>
-
-						<li class="">
-							<a href="jqgrid.html">
-								<i class="menu-icon fa fa-caret-right"></i>
-								Lihat Data
-							</a>
-
-							<b class="arrow"></b>
-						</li>
-					</ul>
 				</li>
 
 			</ul><!-- /.nav-list -->
@@ -320,7 +308,7 @@
 								</div>
 
 								<div class="widget-body">
-									<div class="widget-main">
+									<div class="widget-main bg-primary">
 										<h2 class="text-center">
 											PREDIKSI TINGKAT KERAWANAN PENCURIAN KENDARAAN BERMOTOR DI <br>
 											DI KEPOLISIAN (POLRES) KABUPATEN JAYAPURA <br>
@@ -336,7 +324,7 @@
 						</div><!-- /.span -->
 					</div>
 					<?php echo $contents; ?>
-				</div><!-- /.page-content -->
+				</div> <!-- /.page-content -->
 			</div>
 		</div><!-- /.main-content -->
 
@@ -344,8 +332,8 @@
 			<div class="footer-inner">
 				<div class="footer-content">
 					<span class="bigger-120">
-						<span class="blue bolder">Ace</span>
-						Application &copy; 2013-2014
+						<span class="blue bolder">Tukang Ketik Papua (TKP).</span>
+						Pengembangan Website &copy; 2020-2021
 					</span>
 
 					&nbsp; &nbsp;

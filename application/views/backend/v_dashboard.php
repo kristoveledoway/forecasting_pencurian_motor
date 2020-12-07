@@ -3,12 +3,13 @@
 	<div class="row">
 		<div class="space-6"></div>
 
+		<?php echo $this->session->userdata('level') ?>
+
 		<div class="col-sm-12 infobox-container">
 			<div class="infobox infobox-green">
 				<div class="infobox-icon">
 					<i class="ace-icon fa fa-briefcase"></i>
 				</div>
-
 				<div class="infobox-data">
 					<span class="infobox-data-number">32</span>
 					<div class="infobox-content">Laporan Polisi</div>
