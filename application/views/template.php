@@ -81,8 +81,10 @@
 						<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 							<img class="nav-user-photo" src="<?php echo base_url() ?>aceadmin/assets/images/avatars/user.jpg" alt="Jason's Photo" />
 							<span class="user-info">
-								<?php echo $this->session->userdata('level') ?>
 							</span>
+							<h7 class="text-uppercase">
+								<?php echo $this->session->userdata('username') ?>
+							</h7>
 
 							<i class="ace-icon fa fa-caret-down"></i>
 						</a>
@@ -183,14 +185,21 @@
 					<b class="arrow"></b>
 
 					<ul class="submenu">
-						<li class="">
-							<a href="<?php echo base_url('laporan_polisi/tambah') ?>">
-								<i class="menu-icon fa fa-caret-right"></i>
-								Tambah Data
-							</a>
+						<?php
+						// Cek role user
+						if ($this->session->userdata('level') == 'admin') { // Jika role-nya admin
+						?>
+							<li class="">
+								<a href="<?php echo base_url('laporan_polisi/tambah') ?>">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Tambah Data
+								</a>
 
-							<b class="arrow"></b>
-						</li>
+								<b class="arrow"></b>
+							</li>
+						<?php
+						}
+						?>
 
 						<li class="">
 							<a href="<?php echo base_url('laporan_polisi/lihat') ?>">
@@ -263,7 +272,7 @@
 				</li>
 
 				<li class="">
-					<a href="#">
+					<a href="<?php echo base_url('prediksi') ?>">
 						<i class="menu-icon fa 	fa-pencil-square-o"></i>
 						<span class="menu-text"> Prediksi </span>
 					</a>
@@ -295,7 +304,7 @@
 							<i class="ace-icon fa fa-home home-icon"></i>
 							<a href="#">Home</a>
 						</li>
-						<li class="active"><?php echo $title; ?></li>
+						<li class="active"><?php echo $this->session->userdata('level') ?></li>
 					</ul><!-- /.breadcrumb -->
 				</div>
 

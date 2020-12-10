@@ -6,10 +6,25 @@ class M_laporan extends CI_Model
 
     public function get($username)
     {
-        $this->db->where('username', $username);
-        $result = $this->db->get('user')->row();
+        $this->db->where('username', $username); // Untuk menambahkan Where Clause : username='$username'
+        $result = $this->db->get('user')->row(); // Untuk mengeksekusi dan mengambil data hasil query
+
         return $result;
     }
+
+    function print()
+    {
+        $data_siswa = $this->db->get('laporan');
+        return $data_siswa->result();
+    }
+
+    function get_detail($id)
+    {
+        $this->db->where(array('id' => $id));
+        $as = $this->db->get('laporan');
+        return $as->row();
+    }
+
     // FUNGSI CRUD
     // fungsi untuk mengambil data dari database
     function get_data($table)

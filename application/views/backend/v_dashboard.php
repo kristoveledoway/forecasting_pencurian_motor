@@ -3,8 +3,6 @@
 	<div class="row">
 		<div class="space-6"></div>
 
-		<?php echo $this->session->userdata('level') ?>
-
 		<div class="col-sm-12 infobox-container">
 			<div class="infobox infobox-green">
 				<div class="infobox-icon">

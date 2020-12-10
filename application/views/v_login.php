@@ -63,6 +63,13 @@
 
                                         <div class="space-6"></div>
 
+                                        <?php
+                                        // Cek apakah terdapat session nama message
+                                        if ($this->session->flashdata('message')) { // Jika ada
+                                            echo '<div class="alert alert-danger">' . $this->session->flashdata('message') . '</div>'; // Tampilkan pesannya
+                                        }
+                                        ?>
+
                                         <form action="<?= base_url('login/aksi_login'); ?>" method="POST">
                                             <fieldset>
                                                 <label class="block clearfix">
